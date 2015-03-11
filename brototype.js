@@ -76,11 +76,13 @@
             }
             var props = key.split('.'),
                 item = this.obj;
-            for (var i = 0; i < props.length; i++) {
+            if (Bro(item).isThatEvenAThing() === Bro.TOTALLY) {
+              for (var i = 0; i < props.length; i++) {
                 item = item[props[i]];
                 if (Bro(item).isThatEvenAThing() === Bro.NOWAY) {
-                    return item;
+                  return item;
                 }
+              }
             }
             return item;
         },
